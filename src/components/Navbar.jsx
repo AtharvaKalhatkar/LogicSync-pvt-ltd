@@ -25,9 +25,11 @@ const Navbar = () => {
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#comparison">Compare</a></li>
+          <li><a href="#portfolio">Case Study</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
 
         
         <a href="#contact" className="btn btn-primary nav-cta">Get a Demo</a>
