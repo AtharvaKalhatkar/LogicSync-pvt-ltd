@@ -11,26 +11,26 @@ const Contact = () => {
         </div>
         
         <div className="contact-container glass animate-fade-in">
-          <form className="contact-form">
+          <form action="https://formspree.io/f/xzdwpzbg" method="POST" className="contact-form">
             <div className="grid grid-2">
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" className="form-control" placeholder="John Doe" required />
+                <input type="text" id="name" name="name" className="form-control" placeholder="John Doe" required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" className="form-control" placeholder="john@company.com" required />
+                <input type="email" id="email" name="email" className="form-control" placeholder="john@company.com" required />
               </div>
             </div>
             
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" className="form-control" placeholder="Business Modernization" required />
+              <input type="text" id="subject" name="subject" className="form-control" placeholder="Business Modernization" required />
             </div>
             
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows="5" className="form-control" placeholder="Tell us about your business goals..." required></textarea>
+              <textarea id="message" name="message" rows="5" className="form-control" placeholder="Tell us about your business goals..." required></textarea>
             </div>
             
             <button type="submit" className="btn btn-primary w-full">
@@ -38,6 +38,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
+
       </div>
     </section>
   );
