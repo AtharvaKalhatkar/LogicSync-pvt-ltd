@@ -5,7 +5,9 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
 import Comparison from './components/Comparison';
+import Calculator from './components/Calculator';
 import Portfolio from './components/Portfolio';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -20,13 +22,16 @@ function App() {
         <Services />
         <Process />
         <Comparison />
+        <Calculator />
         <Portfolio />
+        <Faq />
         <Contact />
       </main>
       <Footer />
     </div>
   );
 }
+
 
 
 

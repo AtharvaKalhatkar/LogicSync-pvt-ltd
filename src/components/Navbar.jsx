@@ -26,9 +26,12 @@ const Navbar = () => {
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#comparison">Compare</a></li>
+          <li><a href="#calculator">ROI Savings</a></li>
           <li><a href="#portfolio">Case Study</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
 
 
         
