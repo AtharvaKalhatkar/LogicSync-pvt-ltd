@@ -28,9 +28,18 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="hero-glow-1"></div>
-      <div className="hero-glow-2"></div>
+      <div 
+        className="scroll-indicator" 
+        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <span>Scroll Down</span>
+        <div className="scroll-icon"></div>
+      </div>
+      
+      <div className="hero-glow-1 animate-pulse-glow"></div>
+      <div className="hero-glow-2 animate-pulse-glow" style={{ animationDelay: '3s' }}></div>
     </section>
+
   );
 };
 

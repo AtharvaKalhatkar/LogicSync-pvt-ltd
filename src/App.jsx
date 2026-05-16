@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import BackgroundBlobs from './components/BackgroundBlobs';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
@@ -12,6 +13,7 @@ import './App.css';
 function App() {
   return (
     <div className="app-container">
+      <BackgroundBlobs />
       <Navbar />
       <main>
         <Hero />
@@ -25,6 +27,7 @@ function App() {
     </div>
   );
 }
+
 
 
 
