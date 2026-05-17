@@ -9,34 +9,55 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-content">
-          <div className="logo">
-            <Layers size={24} className="logo-icon" />
-            <span>Logic<span className="sync-text">Sync</span></span>
-          </div>
-          
-          <div className="footer-contact">
-            <p><strong>{name}</strong></p>
-            <p>{phone}</p>
-            <p>{email}</p>
-          </div>
-          
-          <div className="footer-socials">
-            <a href="#" className="social-link"><Globe size={20} /></a>
-            <a href="#" className="social-link"><Cpu size={20} /></a>
-            <a href="#" className="social-link"><Database size={20} /></a>
+        <div className="footer-grid">
+          {/* Col 1: Brand & Bio */}
+          <div className="footer-col">
+            <div className="logo" style={{ marginBottom: '1.25rem' }}>
+              <Layers size={24} className="logo-icon" />
+              <span>Logic<span className="sync-text">Sync</span></span>
+            </div>
+            <p>
+              We are a team of highly proficient software engineers in Pune dedicated 
+              to empowering business operations through innovative desktop systems, 
+              scalable custom portals, and modern synchronized applications.
+            </p>
+            <div className="footer-socials">
+              <a href="#" className="social-link"><Globe size={18} /></a>
+              <a href="#" className="social-link"><Cpu size={18} /></a>
+              <a href="#" className="social-link"><Database size={18} /></a>
+            </div>
           </div>
 
+          {/* Col 2: Services Links */}
+          <div className="footer-col">
+            <h3>Our Services</h3>
+            <div className="footer-links">
+              <a href="#services">Mobile App Design</a>
+              <a href="#services">Software Development</a>
+              <a href="#services">UI/UX Design</a>
+              <a href="#comparison">Compare Systems</a>
+              <a href="#faq">F.A.Q. Portal</a>
+            </div>
+          </div>
+
+          {/* Col 3: Address & Contact */}
+          <div className="footer-col">
+            <h3>Office & Contact</h3>
+            <p>📍 <strong>Address:</strong> 301 Gagangiri Park, Opposite Ekalavya Shikshan Sanstha, Kothrud, Pune, Maharashtra</p>
+            <p>✉️ <strong>Office Email:</strong> info@logicsync.in</p>
+            <p>✉️ <strong>Direct Contact:</strong> {email}</p>
+            <p>📞 <strong>Phone:</strong> {phone} | +91 7972141512</p>
+            <p>🕒 <strong>Hours:</strong> Week Days: 09:00 AM to 06:00 PM</p>
+          </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} LogicSync Digital. All rights reserved.</p>
-          <p style={{ marginTop: '0.5rem', opacity: 0.5 }}>Built with ❤️ for Small Businesses</p>
+          <p style={{ marginTop: '0.5rem', opacity: 0.5 }}>Designed and Developed by TechNikhs & LogicSync</p>
         </div>
       </div>
     </footer>
   );
 };
-
 
 export default Footer;

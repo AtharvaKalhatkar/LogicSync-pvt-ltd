@@ -1,36 +1,36 @@
 import React from 'react';
-import { Cloud, Zap, Shield, BarChart3, Smartphone, Laptop } from 'lucide-react';
+import { Smartphone, Laptop, Eye, Users, Star, Wrench } from 'lucide-react';
 
 const services = [
   {
-    icon: <Cloud size={24} />,
-    title: 'Cloud-Sync Engine',
-    description: 'Keep your business data in sync across all devices with our real-time cloud infrastructure.'
+    icon: <Smartphone size={24} />,
+    title: 'Mobile App Design',
+    description: 'We specialize in creating bespoke applications that drive engagement and elevate user experiences. Our expertise spans across iOS and Android, delivering user-friendly, scalable apps.'
   },
   {
     icon: <Laptop size={24} />,
-    title: 'Premium UI/UX',
-    description: 'Modern, intuitive interfaces that wow your customers and simplify your operations.'
+    title: 'Software Development',
+    description: 'Our software development service crafts tailored solutions, leveraging modern technologies like Java, React, Android, PHP, and Dot Net to build robust, secure, and efficient systems.'
   },
   {
-    icon: <Zap size={24} />,
-    title: 'Automated Billing',
-    description: 'Save 10+ hours per week with automated invoice generation and payment tracking.'
+    icon: <Eye size={24} />,
+    title: 'UI/UX Design',
+    description: 'Transforming ideas into captivating and intuitive user experiences, our UI/UX service leverages cutting-edge methodologies to craft visually stunning interfaces that resonate with your audience.'
   },
   {
-    icon: <Smartphone size={24} />,
-    title: 'Mobile-First Solutions',
-    description: 'Empower your field team with powerful mobile apps that work offline and sync later.'
+    icon: <Users size={24} />,
+    title: 'Proficient Technological Team',
+    description: 'Our group of highly proficient software engineers help you get reliable, fast, and robust business solutions designed specifically to streamline your operations and grow your business.'
   },
   {
-    icon: <Shield size={24} />,
-    title: 'Enterprise Security',
-    description: 'Bank-grade encryption and automated backups ensure your business data is always safe.'
+    icon: <Star size={24} />,
+    title: 'WOW Customers',
+    description: 'When we build custom software solutions for your business, we assure you will be impressed and surprised by the premium quality, seamless animations, and the way we work together.'
   },
   {
-    icon: <BarChart3 size={24} />,
-    title: 'Advanced Analytics',
-    description: 'Gain deep insights into your business performance with real-time reporting dashboards.'
+    icon: <Wrench size={24} />,
+    title: 'Support & Maintenance',
+    description: 'Software solutions are a continuous process. We promise permanent support, regular version backups, and continuous optimizations on all business-related changes and enhancements.'
   }
 ];
 
@@ -39,8 +39,8 @@ const Services = () => {
     <section id="services" className="services">
       <div className="container">
         <div className="section-title">
-          <h2>The LogicSync Advantage</h2>
-          <p>We provide the tools you need to scale your business in the digital age.</p>
+          <h2>Our Expert IT Services</h2>
+          <p>We are a team of highly proficient software engineers in Pune delivering premium IT and software solutions.</p>
         </div>
         
         <div className="grid grid-3">

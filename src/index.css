@@ -3,14 +3,16 @@
 :root {
   --bg-deep-navy: #030712;
   --bg-black: #000000;
-  --sync-blue: #00A3FF;
-  --logic-purple: #8A2BE2;
+  --sync-orange: #FF914D;
+  --logic-amber: #FFBD59;
+  --sync-blue: var(--sync-orange);
+  --logic-purple: var(--logic-amber);
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: blur(12px);
-  --accent-gradient: linear-gradient(135deg, var(--sync-blue), var(--logic-purple));
+  --accent-gradient: linear-gradient(135deg, var(--sync-orange), var(--logic-amber));
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
