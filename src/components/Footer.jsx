@@ -43,12 +43,12 @@ const Footer = () => {
           {/* Col 3: Address & Contact */}
           <div className="footer-col">
             <h3>Office & Contact</h3>
-            <p>📍 <strong>Address:</strong> 301 Gagangiri Park, Opposite Ekalavya Shikshan Sanstha, Kothrud, Pune, Maharashtra</p>
-            <p>✉️ <strong>Office Email:</strong> info@logicsync.in</p>
-            <p>✉️ <strong>Direct Contact:</strong> {email}</p>
-            <p>📞 <strong>Phone:</strong> {phone} | +91 7972141512</p>
+            <p>📍 <strong>Address:</strong> Wagholi, Bakori Phata, Near Oxyvalley Phase 2, Pune, Maharashtra</p>
+            <p>✉️ <strong>Email:</strong> logicsync.software.sol@gmail.com</p>
+            <p>📞 <strong>Phone:</strong> +91 8390768833</p>
             <p>🕒 <strong>Hours:</strong> Week Days: 09:00 AM to 06:00 PM</p>
           </div>
+
         </div>
 
         <div className="footer-bottom">
