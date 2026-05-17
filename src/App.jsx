@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
 import Comparison from './components/Comparison';
+import Transition from './components/Transition';
 import Calculator from './components/Calculator';
 import Portfolio from './components/Portfolio';
 import Faq from './components/Faq';
@@ -22,6 +23,7 @@ function App() {
         <Services />
         <Process />
         <Comparison />
+        <Transition />
         <Calculator />
         <Portfolio />
         <Faq />
