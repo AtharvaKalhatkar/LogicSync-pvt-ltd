@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} LogicSync Digital. All rights reserved.</p>
-          <p style={{ marginTop: '0.5rem', opacity: 0.5 }}>Designed and Developed by TechNikhs & LogicSync</p>
+          <p style={{ marginTop: '0.5rem', opacity: 0.5 }}>Designed and Developed by LogicSync</p>
         </div>
       </div>
     </footer>

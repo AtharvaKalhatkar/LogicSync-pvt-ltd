@@ -11,6 +11,7 @@ import Portfolio from './components/Portfolio';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import './App.css';
 
 function App() {
@@ -30,12 +31,10 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      {/* Floating Interactive WhatsApp Support Widget */}
+      <WhatsAppWidget />
     </div>
   );
 }
-
-
-
-
 
 export default App;
