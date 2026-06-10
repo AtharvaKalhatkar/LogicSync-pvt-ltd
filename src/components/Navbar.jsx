@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Layers, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/components.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,15 +25,30 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToSection = (id) => {
+    closeMenu();
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation and render, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-container">
         {/* Brand Logo */}
-        <div className="logo" onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+        <div className="logo" onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/'); }} style={{ cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
             <Layers size={28} className="logo-icon" />
             <span>Logic<span className="sync-text">Sync</span></span>
-          </Link>
+          </div>
         </div>
         
         {/* Mobile Toggle Button */}
@@ -42,23 +58,23 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><HashLink smooth to="/#services" onClick={closeMenu}>Services</HashLink></li>
-          <li><HashLink smooth to="/#process" onClick={closeMenu}>Process</HashLink></li>
-          <li><HashLink smooth to="/#comparison" onClick={closeMenu}>Compare</HashLink></li>
-          <li><HashLink smooth to="/#transition" onClick={closeMenu}>Transition</HashLink></li>
-          <li><HashLink smooth to="/#calculator" onClick={closeMenu}>ROI</HashLink></li>
-          <li><HashLink smooth to="/#portfolio" onClick={closeMenu}>Case Study</HashLink></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('services')}>Services</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('process')}>Process</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('comparison')}>Compare</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('transition')}>Transition</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('calculator')}>ROI</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('portfolio')}>Case Study</button></li>
           <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
-          <li><HashLink smooth to="/#faq" onClick={closeMenu}>FAQ</HashLink></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('faq')}>FAQ</button></li>
           
           {/* Mobile-Only CTA button */}
           <li className="mobile-cta-li">
-            <HashLink smooth to="/#contact" className="btn btn-primary mobile-cta-btn" onClick={closeMenu}>Get a Demo</HashLink>
+            <button className="btn btn-primary mobile-cta-btn" onClick={() => scrollToSection('contact')}>Get a Demo</button>
           </li>
         </ul>
 
         {/* Desktop CTA Button */}
-        <HashLink smooth to="/#contact" className="btn btn-primary nav-cta">Get a Demo</HashLink>
+        <button onClick={() => scrollToSection('contact')} className="btn btn-primary nav-cta">Get a Demo</button>
       </div>
     </nav>
   );
