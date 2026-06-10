@@ -7,6 +7,7 @@ import Transition from '../components/Transition';
 import Calculator from '../components/Calculator';
 import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
+import CareersCTA from '../components/CareersCTA';
 import Faq from '../components/Faq';
 import Contact from '../components/Contact';
 
@@ -21,6 +22,7 @@ const Home = () => {
       <Calculator />
       <Portfolio />
       <Testimonials />
+      <CareersCTA />
       <Faq />
       <Contact />
     </main>
