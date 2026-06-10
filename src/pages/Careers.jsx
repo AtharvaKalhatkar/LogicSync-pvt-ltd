@@ -1,37 +1,47 @@
 import React, { useEffect } from 'react';
-import { Briefcase, MapPin, Clock, ArrowRight, Code, PenTool, TrendingUp } from 'lucide-react';
+import { Briefcase, MapPin, Clock, ArrowRight, Code, PenTool, Server, Layers } from 'lucide-react';
 import '../styles/components.css';
 
 const internshipRoles = [
   {
     id: 1,
+    title: 'UI/UX Design Intern',
+    department: 'Design',
+    location: 'Remote',
+    type: 'Full-time / Part-time',
+    icon: <PenTool size={24} className="role-icon" />,
+    description: 'Assist in designing wireframes, prototypes, and high-fidelity mockups for our web applications. Bring creative solutions to user flow challenges.',
+    requirements: ['0 - 1 years experience (Freshers welcome)', 'Familiarity with Figma or Adobe XD', 'Basic understanding of design principles', 'Portfolio of previous work/concepts']
+  },
+  {
+    id: 2,
     title: 'Frontend Developer Intern',
     department: 'Engineering',
     location: 'Remote',
     type: 'Full-time / Part-time',
     icon: <Code size={24} className="role-icon" />,
     description: 'Help us build stunning, responsive user interfaces using React and modern CSS frameworks. You will work closely with our core engineering team.',
-    requirements: ['Experience with React and JavaScript', 'Strong understanding of CSS/HTML', 'Eye for design and UX']
-  },
-  {
-    id: 2,
-    title: 'UI/UX Design Intern',
-    department: 'Design',
-    location: 'Remote',
-    type: 'Part-time',
-    icon: <PenTool size={24} className="role-icon" />,
-    description: 'Assist in designing wireframes, prototypes, and high-fidelity mockups for our web applications. Bring creative solutions to user flow challenges.',
-    requirements: ['Familiarity with Figma or Adobe XD', 'Basic understanding of design principles', 'Portfolio of previous work/concepts']
+    requirements: ['0 - 1 years experience (Freshers welcome)', 'Experience with React and JavaScript', 'Strong understanding of CSS/HTML', 'Eye for design and UX']
   },
   {
     id: 3,
-    title: 'Marketing & Growth Intern',
-    department: 'Marketing',
+    title: 'Backend Developer Intern',
+    department: 'Engineering',
+    location: 'Remote',
+    type: 'Full-time / Part-time',
+    icon: <Server size={24} className="role-icon" />,
+    description: 'Work on building robust APIs, managing databases, and ensuring smooth server-side operations for our web applications.',
+    requirements: ['0 - 1 years experience (Freshers welcome)', 'Basic knowledge of Node.js, Python, or similar backend languages', 'Understanding of RESTful APIs', 'Familiarity with databases (SQL/NoSQL)']
+  },
+  {
+    id: 4,
+    title: 'Full Stack Developer Intern',
+    department: 'Engineering',
     location: 'Remote',
     type: 'Full-time',
-    icon: <TrendingUp size={24} className="role-icon" />,
-    description: 'Support our digital marketing campaigns, help create engaging social media content, and analyze SEO metrics to drive inbound traffic.',
-    requirements: ['Excellent written communication', 'Familiarity with SEO concepts', 'Creative mindset']
+    icon: <Layers size={24} className="role-icon" />,
+    description: 'Get hands-on experience across the entire development stack. You will build features from the database all the way to the user interface.',
+    requirements: ['0 - 1 years experience (Freshers welcome)', 'Understanding of both frontend and backend technologies', 'Problem-solving mindset', 'Eagerness to learn new frameworks quickly']
   }
 ];
 
