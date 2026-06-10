@@ -1,39 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import BackgroundBlobs from './components/BackgroundBlobs';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Process from './components/Process';
-import Comparison from './components/Comparison';
-import Transition from './components/Transition';
-import Calculator from './components/Calculator';
-import Portfolio from './components/Portfolio';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import Home from './pages/Home';
+import Careers from './pages/Careers';
 import './App.css';
 
 function App() {
   return (
-    <div className="app-container">
-      <BackgroundBlobs />
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <Process />
-        <Comparison />
-        <Transition />
-        <Calculator />
-        <Portfolio />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
-      {/* Floating Interactive WhatsApp Support Widget */}
-      <WhatsAppWidget />
-    </div>
+    <Router>
+      <div className="app-container">
+        <BackgroundBlobs />
+        <Navbar />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/careers" element={<Careers />} />
+        </Routes>
+        
+        <Footer />
+        {/* Floating Interactive WhatsApp Support Widget */}
+        <WhatsAppWidget />
+      </div>
+    </Router>
   );
 }
 

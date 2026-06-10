@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Layers, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import '../styles/components.css';
 
 const Navbar = () => {
@@ -27,8 +29,10 @@ const Navbar = () => {
       <div className="container nav-container">
         {/* Brand Logo */}
         <div className="logo" onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-          <Layers size={28} className="logo-icon" />
-          <span>Logic<span className="sync-text">Sync</span></span>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+            <Layers size={28} className="logo-icon" />
+            <span>Logic<span className="sync-text">Sync</span></span>
+          </Link>
         </div>
         
         {/* Mobile Toggle Button */}
@@ -38,23 +42,23 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#services" onClick={closeMenu}>Services</a></li>
-          <li><a href="#process" onClick={closeMenu}>Process</a></li>
-          <li><a href="#comparison" onClick={closeMenu}>Compare</a></li>
-          <li><a href="#transition" onClick={closeMenu}>Transition</a></li>
-          <li><a href="#calculator" onClick={closeMenu}>ROI Savings</a></li>
-          <li><a href="#portfolio" onClick={closeMenu}>Case Study</a></li>
-          <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+          <li><HashLink smooth to="/#services" onClick={closeMenu}>Services</HashLink></li>
+          <li><HashLink smooth to="/#process" onClick={closeMenu}>Process</HashLink></li>
+          <li><HashLink smooth to="/#comparison" onClick={closeMenu}>Compare</HashLink></li>
+          <li><HashLink smooth to="/#transition" onClick={closeMenu}>Transition</HashLink></li>
+          <li><HashLink smooth to="/#calculator" onClick={closeMenu}>ROI</HashLink></li>
+          <li><HashLink smooth to="/#portfolio" onClick={closeMenu}>Case Study</HashLink></li>
+          <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
+          <li><HashLink smooth to="/#faq" onClick={closeMenu}>FAQ</HashLink></li>
           
           {/* Mobile-Only CTA button */}
           <li className="mobile-cta-li">
-            <a href="#contact" className="btn btn-primary mobile-cta-btn" onClick={closeMenu}>Get a Demo</a>
+            <HashLink smooth to="/#contact" className="btn btn-primary mobile-cta-btn" onClick={closeMenu}>Get a Demo</HashLink>
           </li>
         </ul>
 
         {/* Desktop CTA Button */}
-        <a href="#contact" className="btn btn-primary nav-cta">Get a Demo</a>
+        <HashLink smooth to="/#contact" className="btn btn-primary nav-cta">Get a Demo</HashLink>
       </div>
     </nav>
   );
