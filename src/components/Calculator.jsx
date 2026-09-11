@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { DollarSign, Clock, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { Clock, Zap } from 'lucide-react';
 
 const Calculator = () => {
   const [dailyEntries, setDailyEntries] = useState(150);

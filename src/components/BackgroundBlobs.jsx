@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BackgroundBlobs = () => {
   return (
     <div className="blobs-container">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Smartphone, Laptop, Eye, Users, Star, Wrench } from 'lucide-react';
 
 const services = [

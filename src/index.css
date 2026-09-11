@@ -17,6 +17,10 @@
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --primary: #ffffff;
   --primary-dark: #171717;
+  --bg-dark: #080808;
+  --text-light: #ffffff;
+  --text-muted: #a3a3a3;
+  --nav-height: 80px;
 }
 
 * {
@@ -60,8 +64,8 @@ ul {
   padding: 0 2rem;
 }
 
-/* Glassmorphism / Card Utility */
-.glass {
+.glass,
+.glass-panel {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -71,8 +75,44 @@ ul {
   transition: var(--transition);
 }
 
-.glass:hover {
+.glass:hover,
+.glass-panel:hover {
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  line-height: 1.6;
+}
+
+.bg-darker {
+  background-color: var(--bg-black);
+}
+
+.bg-gradient {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* Button Styles */

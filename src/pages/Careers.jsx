@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Briefcase, MapPin, Clock, ArrowRight, Code, PenTool, Server, Layers } from 'lucide-react';
+import { useEffect } from 'react';
+import { MapPin, Clock, ArrowRight, Code, PenTool, Server, Layers } from 'lucide-react';
 import '../styles/components.css';
 
 const internshipRoles = [

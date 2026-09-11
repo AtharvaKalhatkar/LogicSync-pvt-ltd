@@ -1,11 +1,9 @@
-import React from 'react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Process from '../components/Process';
 import Comparison from '../components/Comparison';
 import Transition from '../components/Transition';
 import Calculator from '../components/Calculator';
-import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
 import CareersCTA from '../components/CareersCTA';
 import Faq from '../components/Faq';
@@ -20,7 +18,6 @@ const Home = () => {
       <Comparison />
       <Transition />
       <Calculator />
-      <Portfolio />
       <Testimonials />
       <CareersCTA />
       <Faq />

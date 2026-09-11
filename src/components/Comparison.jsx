@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import manualLedger from '../assets/manual-ledger.jpg';
 import manualBill from '../assets/manual-bill.jpg';
 import aquaRegister from '../assets/aqua-desktop-register.png';

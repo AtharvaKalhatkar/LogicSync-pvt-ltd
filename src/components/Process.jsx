@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, Code2, RefreshCcw, Rocket } from 'lucide-react';
 
 const steps = [

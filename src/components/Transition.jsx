@@ -1,5 +1,4 @@
-import React from 'react';
-import { Shield, RefreshCw, Layers, TrendingUp, Clock, AlertTriangle, CheckCircle, Smartphone, Laptop } from 'lucide-react';
+import { Shield, RefreshCw, Layers, TrendingUp, Clock, CheckCircle } from 'lucide-react';
 
 const Transition = () => {
   return (

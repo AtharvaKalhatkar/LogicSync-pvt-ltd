@@ -1,10 +1,6 @@
-import React from 'react';
 import { Layers, Globe, Cpu, Database } from 'lucide-react';
 
 const Footer = () => {
-  const name = "Atharva Kalhatkar";
-  const phone = "8390768833";
-  const email = "kalhatkaratharva01@gmail.com";
 
   return (
     <footer className="footer">

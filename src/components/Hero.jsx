@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
 import heroMockup from '../assets/aqua-mockup.png';
 
@@ -26,7 +25,7 @@ const Hero = () => {
               Get a Free Demo <ChevronRight size={20} />
             </button>
             <button className="btn btn-outline" onClick={() => document.getElementById('transition')?.scrollIntoView({ behavior: 'smooth' })}>
-              <Play size={20} className="icon-orange" /> Watch Video
+              <Play size={20} className="icon-orange" /> Explore Transition
             </button>
           </div>
         </div>

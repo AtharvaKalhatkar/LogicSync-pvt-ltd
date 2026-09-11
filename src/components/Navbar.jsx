@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Layers, Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/components.css';
@@ -63,7 +63,6 @@ const Navbar = () => {
           <li><button className="nav-btn-link" onClick={() => scrollToSection('comparison')}>Compare</button></li>
           <li><button className="nav-btn-link" onClick={() => scrollToSection('transition')}>Transition</button></li>
           <li><button className="nav-btn-link" onClick={() => scrollToSection('calculator')}>ROI</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('portfolio')}>Case Study</button></li>
           <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
           <li><button className="nav-btn-link" onClick={() => scrollToSection('faq')}>FAQ</button></li>
           
