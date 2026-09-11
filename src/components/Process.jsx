@@ -1,48 +1,56 @@
-import { Search, Code2, RefreshCcw, Rocket } from 'lucide-react';
+import { Compass, Code2, Rocket, Headset } from 'lucide-react';
 
 const steps = [
   {
-    icon: <Search size={28} />,
-    title: 'Consultation',
-    description: 'We analyze your current manual workflows and identify bottlenecks where technology can save time.'
+    step: '01',
+    icon: <Compass size={26} />,
+    title: 'Discovery & Workflow Mapping',
+    desc: 'We analyze your current manual workflows, spreadsheets, and bottlenecks to craft an architectural roadmap tailored to your operations.'
   },
   {
-    icon: <Code2 size={28} />,
-    title: 'Custom Build',
-    description: 'Our team develops a tailor-made software solution designed specifically for your business needs.'
+    step: '02',
+    icon: <Code2 size={26} />,
+    title: 'Custom Engineering & Agile Sprints',
+    desc: 'Our engineers build your solution using modern stacks with clean code, weekly interactive demo milestones, and direct communication.'
   },
   {
-    icon: <RefreshCcw size={28} />,
-    title: 'Cloud Sync',
-    description: 'We integrate real-time synchronization, allowing your team to work offline and sync data seamlessly.'
+    step: '03',
+    icon: <Rocket size={26} />,
+    title: 'Cloud Deployment & Onboarding',
+    desc: 'We migrate your legacy records seamlessly, configure encrypted cloud synchronization, and conduct hands-on training for your entire team.'
   },
   {
-    icon: <Rocket size={28} />,
-    title: 'Scale Up',
-    description: 'Launch your digital system and watch your operational efficiency grow as we support your expansion.'
+    step: '04',
+    icon: <Headset size={26} />,
+    title: 'Continuous Scaling & 24/7 SLA',
+    desc: 'Post-launch dedicated support ensures your systems remain blazing fast, ultra-secure, and ready to scale alongside company growth.'
   }
 ];
 
 const Process = () => {
   return (
-    <section id="process" className="process">
+    <section id="process" className="process-section section bg-darker">
       <div className="container">
         <div className="section-title">
-          <h2>How We Transform Your Business</h2>
-          <p>Our four-step process to take your operations from manual to high-tech.</p>
+          <span className="badge-pill">OUR METHODOLOGY</span>
+          <h2>How We Deliver <span className="sync-text">Predictable Success</span></h2>
+          <p>
+            A disciplined, four-phase engineering framework designed to deliver high-quality 
+            software on time and within scope.
+          </p>
         </div>
-        
+
         <div className="process-grid grid grid-4">
-          {steps.map((step, index) => (
-            <div key={index} className="process-item animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="process-icon-wrapper">
-                <div className="process-icon glass">
-                  {step.icon}
+          {steps.map((item, idx) => (
+            <div key={idx} className="process-card glass">
+              <div className="process-top">
+                <span className="step-number">{item.step}</span>
+                <div className="process-icon-box">
+                  {item.icon}
                 </div>
-                {index < steps.length - 1 && <div className="process-connector"></div>}
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+              <h3 className="process-title">{item.title}</h3>
+              <p className="process-desc">{item.desc}</p>
             </div>
           ))}
         </div>

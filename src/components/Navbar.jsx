@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Layers, Menu, X } from 'lucide-react';
+import { Layers, Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/components.css';
 
@@ -29,7 +29,6 @@ const Navbar = () => {
     closeMenu();
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation and render, then scroll
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +43,11 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-container">
         {/* Brand Logo */}
-        <div className="logo" onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/'); }} style={{ cursor: 'pointer' }}>
+        <div 
+          className="logo" 
+          onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/'); }} 
+          style={{ cursor: 'pointer' }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
             <Layers size={28} className="logo-icon" />
             <span>Logic<span className="sync-text">Sync</span></span>
@@ -58,22 +61,26 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('hero')}>Home</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('about')}>About</button></li>
           <li><button className="nav-btn-link" onClick={() => scrollToSection('services')}>Services</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('products')}>Products</button></li>
           <li><button className="nav-btn-link" onClick={() => scrollToSection('process')}>Process</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('comparison')}>Compare</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('transition')}>Transition</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('calculator')}>ROI</button></li>
           <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('faq')}>FAQ</button></li>
+          <li><button className="nav-btn-link" onClick={() => scrollToSection('contact')}>Contact</button></li>
           
           {/* Mobile-Only CTA button */}
           <li className="mobile-cta-li">
-            <button className="btn btn-primary mobile-cta-btn" onClick={() => scrollToSection('contact')}>Get a Demo</button>
+            <button className="btn btn-primary mobile-cta-btn" onClick={() => scrollToSection('contact')}>
+              Get in Touch <ArrowRight size={16} />
+            </button>
           </li>
         </ul>
 
         {/* Desktop CTA Button */}
-        <button onClick={() => scrollToSection('contact')} className="btn btn-primary nav-cta">Get a Demo</button>
+        <button onClick={() => scrollToSection('contact')} className="btn btn-primary nav-cta">
+          Get in Touch <ArrowRight size={16} />
+        </button>
       </div>
     </nav>
   );

@@ -3,28 +3,28 @@ import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'Our drivers deliver in areas with poor network. Will the mobile app work?',
-    answer: 'Yes, absolutely! We specialize in Offline-First architectures. The driver PWA app runs fully offline, stores records locally on the driver\'s device, and automatically synchronizes with your cloud database (Supabase/MySQL) the moment internet connectivity is restored.'
+    question: 'What types of businesses and industries do you build software for?',
+    answer: 'We design custom software, ERPs, and mobile applications for manufacturing units, retail distributors, wholesale traders, logistics providers, and professional service companies across Pune and India.'
   },
   {
-    question: 'How long does it take to fully digitize our operations?',
-    answer: 'A standard deployment (like an automated ledger, basic analytics dashboard, and driver companion apps) takes about 2 to 3 weeks. High-end enterprise setups with multi-device configurations, custom billing engines, and manual bookkeeping exports typically take 4 to 6 weeks.'
+    question: 'How does your Offline-First architecture work for field teams?',
+    answer: 'Our mobile and desktop apps are architected with local SQLite/IndexedDB caches. When internet connectivity drops, your team can continue recording invoices, deliveries, or attendance without interruption. As soon as a connection is detected, changes automatically sync with your cloud database.'
   },
   {
-    question: 'Will our non-technical staff and drivers be able to operate the apps?',
-    answer: 'Yes! We design incredibly simple, intuitive mobile layouts. Our UIs are customized with bold labels, big buttons, clean search boxes, and minimal steps. If your drivers or helpers can operate WhatsApp, they can easily navigate our synchronized systems.'
+    question: 'What is the typical timeline for developing a custom software solution?',
+    answer: 'A standard custom system (such as an automated billing portal or driver tracking suite) is typically designed, developed, and deployed within 3 to 5 weeks. Larger enterprise ERP platforms with complex multi-branch logic usually take 6 to 10 weeks.'
   },
   {
-    question: 'Where is our business data stored and is it safe from crashes?',
-    answer: 'Your data safety is our highest priority. We implement two-layer resilience: your local systems hold secure offline caches, and our cloud databases execute automated snapshots every 2 hours (e.g., to Google Drive or AWS). Even if a computer breaks, your complete records are recoverable in one click.'
+    question: 'Who owns the code and intellectual property once the project is finished?',
+    answer: 'You do. You retain 100% full intellectual property, source code ownership, and exclusive rights to all custom business logic, databases, and assets we build for your enterprise.'
   },
   {
-    question: 'Can you export all our data into Microsoft Excel or PDF?',
-    answer: 'Yes! All our custom desktop systems come equipped with a green "Download Excel" engine. It generates perfectly formatted, calculation-ready spreadsheets containing exact daily records, client routes, and automated financial tallies, ready for audit and taxation.'
+    question: 'Can you migrate our existing Excel sheets and paper records to the new system?',
+    answer: 'Yes! Data migration is part of our onboarding. Our team handles data sanitation, schema mapping, and importing your client directories, historical accounts, and inventory lists directly into your new cloud database.'
   },
   {
-    question: 'What kind of training and maintenance support do you provide?',
-    answer: 'We provide full hands-on training for your warehouse operators, administrative managers, and drivers. Additionally, we provide a 30-day dedicated post-launch support period to monitor stability and implement updates as your business scales.'
+    question: 'What ongoing maintenance and SLA support do you offer after launch?',
+    answer: 'Every deployment includes a 30-day dedicated warranty and training period. Afterwards, we provide ongoing maintenance packages that cover version updates, cloud backup monitoring, security patches, and 24/7 emergency response.'
   }
 ];
 
@@ -36,14 +36,15 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq" className="faq">
+    <section id="faq" className="faq-section section bg-darker">
       <div className="container">
         <div className="section-title">
-          <h2>Got Questions? We Have Answers.</h2>
-          <p>Common concerns and questions small business owners ask when digitizing their operations with LogicSync.</p>
+          <span className="badge-pill">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>Got Questions? <span className="sync-text">We Have Answers</span></h2>
+          <p>Everything you need to know about working with LogicSync Digital on your next software initiative.</p>
         </div>
 
-        <div className="faq-list animate-fade-in">
+        <div className="faq-list">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -63,7 +64,7 @@ const Faq = () => {
                 </div>
                 
                 {isOpen && (
-                  <div className="faq-answer animate-fade-in">
+                  <div className="faq-answer">
                     <p>{faq.answer}</p>
                   </div>
                 )}

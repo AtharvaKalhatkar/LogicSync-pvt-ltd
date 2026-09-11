@@ -1,55 +1,79 @@
-import { Layers, Globe, Cpu, Database } from 'lucide-react';
+import { Layers, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="footer">
+    <footer className="footer-modern">
       <div className="container">
-        <div className="footer-grid">
-          {/* Col 1: Brand & Bio */}
-          <div className="footer-col">
-            <div className="logo" style={{ marginBottom: '1.25rem' }}>
-              <Layers size={24} className="logo-icon" />
+        <div className="footer-top grid grid-4">
+          {/* Col 1: Brand */}
+          <div className="footer-brand-col">
+            <div className="logo footer-logo" onClick={scrollToTop} style={{ cursor: 'pointer' }}>
+              <Layers size={26} className="logo-icon" />
               <span>Logic<span className="sync-text">Sync</span></span>
             </div>
-            <p>
-              We are a team of highly proficient software engineers in Pune dedicated 
-              to empowering business operations through innovative desktop systems, 
-              scalable custom portals, and modern synchronized applications.
+            <p className="footer-about-text">
+              LogicSync Digital is a technology & software engineering company based in Pune, India. 
+              We build custom ERPs, offline-first mobile applications, automated cloud billing, and scalable digital solutions.
             </p>
-            <div className="footer-socials">
-              <a href="#" className="social-link"><Globe size={18} /></a>
-              <a href="#" className="social-link"><Cpu size={18} /></a>
-              <a href="#" className="social-link"><Database size={18} /></a>
+          </div>
+
+          {/* Col 2: Navigation */}
+          <div className="footer-nav-col">
+            <h4 className="footer-heading">Company</h4>
+            <ul className="footer-links-list">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#process">Methodology</a></li>
+              <li><Link to="/careers">Careers</Link></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Products */}
+          <div className="footer-products-col">
+            <h4 className="footer-heading">Solutions</h4>
+            <ul className="footer-links-list">
+              <li><a href="#products">SyncERP Suite</a></li>
+              <li><a href="#products">VyaparSync PWA</a></li>
+              <li><a href="#products">BillSync & POS</a></li>
+              <li><a href="#products">FleetSync Logistics</a></li>
+              <li><a href="#services">Cloud Migrations</a></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact info */}
+          <div className="footer-contact-col">
+            <h4 className="footer-heading">Pune Office</h4>
+            <div className="footer-contact-item">
+              <MapPin size={16} className="contact-icon" />
+              <span>Pune, Maharashtra, India</span>
+            </div>
+            <div className="footer-contact-item">
+              <Mail size={16} className="contact-icon" />
+              <a href="mailto:logicsync.software.sol@gmail.com">logicsync.software.sol@gmail.com</a>
+            </div>
+            <div className="footer-contact-item">
+              <Phone size={16} className="contact-icon" />
+              <a href="tel:+918390768833">+91 8390768833</a>
             </div>
           </div>
-
-          {/* Col 2: Services Links */}
-          <div className="footer-col">
-            <h3>Our Services</h3>
-            <div className="footer-links">
-              <a href="#services">Mobile App Design</a>
-              <a href="#services">Software Development</a>
-              <a href="#services">UI/UX Design</a>
-              <a href="#comparison">Compare Systems</a>
-              <a href="#faq">F.A.Q. Portal</a>
-            </div>
-          </div>
-
-          {/* Col 3: Address & Contact */}
-          <div className="footer-col">
-            <h3>Office & Contact</h3>
-            <p>📍 <strong>Address:</strong> Wagholi, Bakori Phata, Near Oxyvalley Phase 2, Pune, Maharashtra</p>
-            <p>✉️ <strong>Email:</strong> logicsync.software.sol@gmail.com</p>
-            <p>📞 <strong>Phone:</strong> +91 8390768833</p>
-            <p>🕒 <strong>Hours:</strong> Week Days: 09:00 AM to 06:00 PM</p>
-          </div>
-
         </div>
 
-        <div className="footer-bottom">
+        {/* Footer Bottom */}
+        <div className="footer-bottom-bar">
           <p>&copy; {new Date().getFullYear()} LogicSync Digital. All rights reserved.</p>
-          <p style={{ marginTop: '0.5rem', opacity: 0.5 }}>Designed and Developed by LogicSync</p>
+          <div className="footer-bottom-right">
+            <span>Engineered with Precision in Pune</span>
+            <button type="button" onClick={scrollToTop} className="back-to-top-btn" aria-label="Back to Top">
+              <ArrowUp size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
