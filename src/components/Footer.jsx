@@ -1,5 +1,6 @@
-import { Layers, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+
 import { Link } from 'react-router-dom';
+import { Phone, Mail, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -7,74 +8,78 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-modern">
-      <div className="container">
-        <div className="footer-top grid grid-4">
-          {/* Col 1: Brand */}
-          <div className="footer-brand-col">
-            <div className="logo footer-logo" onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-              <Layers size={26} className="logo-icon" />
-              <span>Logic<span className="sync-text">Sync</span></span>
+    <footer className="bg-navy text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          <div className="space-y-4">
+            <div className="font-bold text-xl text-white">
+              LogicSync <span className="text-orange">Digital</span>
             </div>
-            <p className="footer-about-text">
-              LogicSync Digital is a technology & software engineering company based in Pune, India. 
-              We build custom ERPs, offline-first mobile applications, automated cloud billing, and scalable digital solutions.
+            <p className="text-white/60 text-sm">
+              Business Problems. Smart Digital Solutions.
             </p>
+            <div className="flex items-center gap-4 mt-4">
+              <a href="tel:+918390768833" className="text-white/70 hover:text-orange transition-colors">
+                <Phone className="w-5 h-5" />
+              </a>
+              <a href="mailto:logicsync.software.sol@gmail.com" className="text-white/70 hover:text-orange transition-colors">
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Col 2: Navigation */}
-          <div className="footer-nav-col">
-            <h4 className="footer-heading">Company</h4>
-            <ul className="footer-links-list">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Our Services</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#process">Methodology</a></li>
-              <li><Link to="/careers">Careers</Link></li>
-              <li><a href="#contact">Contact Us</a></li>
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Company</h4>
+            <ul className="space-y-3">
+              <li><Link to="/about" className="text-white/70 hover:text-orange text-sm transition-colors">About</Link></li>
+              <li><Link to="/solutions" className="text-white/70 hover:text-orange text-sm transition-colors">Solutions</Link></li>
+              <li><Link to="/products" className="text-white/70 hover:text-orange text-sm transition-colors">Products</Link></li>
+              <li><Link to="/projects" className="text-white/70 hover:text-orange text-sm transition-colors">Projects</Link></li>
+              <li><Link to="/contact" className="text-white/70 hover:text-orange text-sm transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Col 3: Products */}
-          <div className="footer-products-col">
-            <h4 className="footer-heading">Solutions</h4>
-            <ul className="footer-links-list">
-              <li><a href="#products">SyncERP Suite</a></li>
-              <li><a href="#products">VyaparSync PWA</a></li>
-              <li><a href="#products">BillSync & POS</a></li>
-              <li><a href="#products">FleetSync Logistics</a></li>
-              <li><a href="#services">Cloud Migrations</a></li>
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <ul className="space-y-3">
+              <li className="text-white/70 text-sm">Custom Software</li>
+              <li className="text-white/70 text-sm">Mobile Apps</li>
+              <li className="text-white/70 text-sm">Automation</li>
+              <li className="text-white/70 text-sm">AI Solutions</li>
+              <li className="text-white/70 text-sm">Digital Transformation</li>
             </ul>
           </div>
 
-          {/* Col 4: Contact info */}
-          <div className="footer-contact-col">
-            <h4 className="footer-heading">Pune Office</h4>
-            <div className="footer-contact-item">
-              <MapPin size={16} className="contact-icon" />
-              <span>Pune, Maharashtra, India</span>
-            </div>
-            <div className="footer-contact-item">
-              <Mail size={16} className="contact-icon" />
-              <a href="mailto:logicsync.software.sol@gmail.com">logicsync.software.sol@gmail.com</a>
-            </div>
-            <div className="footer-contact-item">
-              <Phone size={16} className="contact-icon" />
-              <a href="tel:+918390768833">+91 8390768833</a>
-            </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Industries</h4>
+            <ul className="space-y-3">
+              <li className="text-white/70 text-sm">Manufacturing</li>
+              <li className="text-white/70 text-sm">Distribution</li>
+              <li className="text-white/70 text-sm">Construction</li>
+              <li className="text-white/70 text-sm">Real Estate</li>
+              <li className="text-white/70 text-sm">Water Supply</li>
+              <li className="text-white/70 text-sm">Agriculture</li>
+              <li className="text-white/70 text-sm">and more</li>
+            </ul>
           </div>
+
         </div>
 
-        {/* Footer Bottom */}
-        <div className="footer-bottom-bar">
-          <p>&copy; {new Date().getFullYear()} LogicSync Digital. All rights reserved.</p>
-          <div className="footer-bottom-right">
-            <span>Engineered with Precision in Pune</span>
-            <button type="button" onClick={scrollToTop} className="back-to-top-btn" aria-label="Back to Top">
-              <ArrowUp size={16} />
-            </button>
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-white/50 text-sm">
+            © 2024 LogicSync Digital. All rights reserved.
           </div>
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-white/50 hover:text-orange text-sm transition-colors"
+          >
+            <ArrowUp className="w-4 h-4" />
+            Back to top
+          </button>
         </div>
+
       </div>
     </footer>
   );

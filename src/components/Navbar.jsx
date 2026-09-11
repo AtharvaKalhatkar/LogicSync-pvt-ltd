@@ -1,88 +1,123 @@
 import { useState, useEffect } from 'react';
-import { Layers, Menu, X, ArrowRight } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import '../styles/components.css';
+import { Link } from 'react-router-dom';
+import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const scrollToSection = (id) => {
-    closeMenu();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const element = document.getElementById(id);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const navLinks = [
+    { name: 'Solutions', path: '/solutions' },
+    { name: 'Products', path: '/products' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
-      <div className="container nav-container">
-        {/* Brand Logo */}
-        <div 
-          className="logo" 
-          onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/'); }} 
-          style={{ cursor: 'pointer' }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
-            <Layers size={28} className="logo-icon" />
-            <span>Logic<span className="sync-text">Sync</span></span>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-md py-3' : 'bg-white py-5'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-1 text-2xl font-bold">
+              <span className="text-navy">LogicSync</span>
+              <span className="text-orange">Digital</span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-gray-800 hover:text-orange font-medium transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Desktop CTA */}
+            <div className="hidden md:block">
+              <Link
+                to="/contact"
+                className="bg-orange text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-light transition-colors flex items-center gap-2"
+              >
+                Book a Consultation
+              </Link>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden text-navy p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
-        
-        {/* Mobile Toggle Button */}
-        <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle Navigation Menu">
-          {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
+      </header>
 
-        {/* Navigation Links */}
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('hero')}>Home</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('about')}>About</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('services')}>Services</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('products')}>Products</button></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('process')}>Process</button></li>
-          <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
-          <li><button className="nav-btn-link" onClick={() => scrollToSection('contact')}>Contact</button></li>
-          
-          {/* Mobile-Only CTA button */}
-          <li className="mobile-cta-li">
-            <button className="btn btn-primary mobile-cta-btn" onClick={() => scrollToSection('contact')}>
-              Get in Touch <ArrowRight size={16} />
-            </button>
-          </li>
-        </ul>
-
-        {/* Desktop CTA Button */}
-        <button onClick={() => scrollToSection('contact')} className="btn btn-primary nav-cta">
-          Get in Touch <ArrowRight size={16} />
-        </button>
+      {/* Mobile Full-Screen Menu */}
+      <div
+        className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden flex flex-col pt-24 pb-20`}
+      >
+        <nav className="flex flex-col items-center gap-6 mt-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="text-2xl font-bold text-navy hover:text-orange transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="mt-4 text-xl font-bold text-orange flex items-center gap-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Book a Consultation <ArrowRight size={20} />
+          </Link>
+        </nav>
       </div>
-    </nav>
+
+      {/* Mobile Sticky Bottom Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 z-50">
+        <a
+          href="https://wa.me/918390768833"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-orange text-white w-full py-3 rounded-lg font-bold flex justify-center items-center gap-2 shadow-lg"
+        >
+          <Phone size={20} />
+          Talk to Us
+        </a>
+      </div>
+    </>
   );
 };
 

@@ -1,29 +1,35 @@
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Services from '../components/Services';
-import Products from '../components/Products';
-import TechStack from '../components/TechStack';
-import Process from '../components/Process';
-import Testimonials from '../components/Testimonials';
-import CareersCTA from '../components/CareersCTA';
-import Faq from '../components/Faq';
-import Contact from '../components/Contact';
+import Hero from '../sections/Hero';
+import TrustBar from '../sections/TrustBar';
+import ProblemSection from '../sections/ProblemSection';
+import WhatWeDo from '../sections/WhatWeDo';
+import Process from '../sections/Process';
+import Products from '../sections/Products';
+import Industries from '../sections/Industries';
+import WhyLogicSync from '../sections/WhyLogicSync';
+import CaseStudies from '../sections/CaseStudies';
+import AISection from '../sections/AISection';
+import CustomCTA from '../sections/CustomCTA';
+import About from '../sections/About';
+import Contact from '../sections/Contact';
 
-const Home = () => {
+function Home() {
   return (
     <main>
       <Hero />
-      <About />
-      <Services />
-      <Products />
-      <TechStack />
+      <TrustBar />
+      <ProblemSection />
+      <WhatWeDo />
       <Process />
-      <Testimonials />
-      <CareersCTA />
-      <Faq />
+      <Products />
+      <Industries />
+      <WhyLogicSync />
+      <CaseStudies />
+      <AISection />
+      <CustomCTA />
+      <About />
       <Contact />
     </main>
   );
-};
+}
 
 export default Home;

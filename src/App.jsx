@@ -1,27 +1,29 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import BackgroundBlobs from './components/BackgroundBlobs';
 import Footer from './components/Footer';
-import WhatsAppWidget from './components/WhatsAppWidget';
 import Home from './pages/Home';
-import Careers from './pages/Careers';
-import './App.css';
+import SolutionsPage from './pages/SolutionsPage';
+import ProductsPage from './pages/ProductsPage';
+import IndustriesPage from './pages/IndustriesPage';
+import ProjectsPage from './pages/ProjectsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
     <Router>
-      <div className="app-container">
-        <BackgroundBlobs />
+      <div className="min-h-screen bg-white">
         <Navbar />
-        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/careers" element={<Careers />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
-        
         <Footer />
-        {/* Floating Interactive WhatsApp Support Widget */}
-        <WhatsAppWidget />
       </div>
     </Router>
   );
