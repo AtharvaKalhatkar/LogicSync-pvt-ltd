@@ -1,6 +1,4 @@
-
-import { Fragment } from 'react';
-import { Search, PenTool, Code2, TrendingUp, ChevronRight } from 'lucide-react';
+import { Search, PenTool, Code2, TrendingUp, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useReveal } from '../lib/hooks';
 
 export default function Process() {
@@ -8,69 +6,122 @@ export default function Process() {
 
   const steps = [
     {
-      num: 1,
+      num: "01",
       title: "Understand",
       icon: Search,
-      description: "We understand how your business currently works.",
-      label: "Business Problem"
+      subtitle: "Business Problem",
+      description: "We visit or meet with you to observe your daily operations, examine your registers, and pinpoint where time and money are leaking.",
+      details: ["On-site / virtual audit", "Identify manual bottlenecks", "Map existing data flows"]
     },
     {
-      num: 2,
+      num: "02",
       title: "Design",
       icon: PenTool,
-      description: "We identify problems and design a better workflow.",
-      label: "Business Workflow"
+      subtitle: "Business Workflow",
+      description: "We map out an optimized, intuitive workflow specifically made for your team — simple enough that anyone can use it without technical training.",
+      details: ["Simplified screen flows", "Role-based permissions", "Automated trigger points"]
     },
     {
-      num: 3,
+      num: "03",
       title: "Build",
       icon: Code2,
-      description: "We build the required software, app, automation or AI system.",
-      label: "Smart System"
+      subtitle: "Smart System",
+      description: "We engineer the desktop software, mobile apps, WhatsApp integrations, and cloud sync using robust, production-tested technology.",
+      details: ["Fast & secure architecture", "Real-time sync engines", "WhatsApp & SMS bridges"]
     },
     {
-      num: 4,
+      num: "04",
       title: "Improve",
       icon: TrendingUp,
-      description: "We deploy, support and continuously improve the system.",
-      label: "Better Operations"
+      subtitle: "Better Operations",
+      description: "We deploy the system on your computers and phones, train your team, and provide reliable, direct developer support long after launch.",
+      details: ["Hands-on team training", "Zero downtime rollout", "Direct ongoing support"]
     }
   ];
 
   return (
-    <section id="process" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
-        <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-navy text-3xl md:text-4xl font-bold text-center">How We Solve Your Problem</h2>
+    <section id="process" className="py-24 bg-white" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy/5 text-navy font-bold text-xs uppercase tracking-wider mb-4 border border-navy/10">
+            <span>Our Methodology</span>
+          </div>
+          <h2 className="text-navy text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            How We Solve Your Problem
+          </h2>
+          <p className="text-slate text-base sm:text-lg mt-4">
+            A clear, transparent 4-stage engineering process from initial operational chaos to smooth digital execution.
+          </p>
+
+          {/* Visual Transformation Stream */}
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-50 border border-gray-200 p-2 sm:p-3 rounded-2xl text-xs sm:text-sm font-bold shadow-xs">
+            <span className="bg-red-50 text-red-600 px-3 py-1 rounded-lg border border-red-200">
+              Business Problem
+            </span>
+            <ArrowRight className="w-4 h-4 text-slate" />
+            <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-lg border border-amber-200">
+              Business Workflow
+            </span>
+            <ArrowRight className="w-4 h-4 text-slate" />
+            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg border border-blue-200">
+              Smart System
+            </span>
+            <ArrowRight className="w-4 h-4 text-slate" />
+            <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg border border-emerald-200">
+              Better Operations
+            </span>
+          </div>
         </div>
 
-        <div className={`mt-16 flex flex-col md:flex-row items-center md:items-start justify-between relative transition-all duration-700 delay-150 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* 4 Cards Grid */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 delay-150 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {steps.map((step, index) => {
-            const isLast = index === steps.length - 1;
+            const Icon = step.icon;
             return (
-              <Fragment key={index}>
-                <div className="flex flex-col items-center text-center w-full md:w-1/4 relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-orange text-white font-bold text-xl flex items-center justify-center shadow-md">
-                    {step.num}
-                  </div>
-                  <h3 className="text-xl font-bold text-navy mt-4">{step.title}</h3>
-                  <p className="text-slate mt-2 text-sm max-w-[200px]">{step.description}</p>
-                  <span className="text-xs uppercase tracking-wider text-orange font-semibold mt-3">{step.label}</span>
-                </div>
-                {!isLast && (
-                  <div className="hidden md:flex flex-1 items-center justify-center h-16 w-full -mx-4 z-0">
-                    <div className="w-full border-t-2 border-dashed border-orange/40 relative flex justify-end items-center">
-                       <ChevronRight className="text-orange/60 absolute -right-3 w-6 h-6 bg-gray-50" />
+              <div 
+                key={index} 
+                className="bg-gray-50/70 rounded-3xl p-7 border border-gray-200 hover:bg-white hover:border-orange/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-orange/5 rounded-bl-full pointer-events-none group-hover:bg-orange/10 transition-colors" />
+
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-3xl font-black text-navy/20 group-hover:text-orange transition-colors">
+                      {step.num}
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-white shadow-xs border border-gray-200 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-white transition-colors">
+                      <Icon className="w-6 h-6" />
                     </div>
                   </div>
-                )}
-                {!isLast && (
-                  <div className="md:hidden h-12 border-l-2 border-dashed border-orange/40 my-2"></div>
-                )}
-              </Fragment>
+
+                  <span className="text-xs font-bold uppercase tracking-widest text-orange block mb-1">
+                    {step.subtitle}
+                  </span>
+                  <h3 className="text-2xl font-bold text-navy mb-3">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-slate text-sm leading-relaxed mb-6">
+                    {step.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-200/80 space-y-2">
+                  {step.details.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs font-semibold text-gray-700">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-orange shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

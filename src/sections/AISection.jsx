@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useReveal } from '../lib/hooks';
 import { 
@@ -9,59 +8,125 @@ import {
   Headphones, 
   LineChart, 
   Workflow, 
-  Bot 
+  Bot,
+  ArrowRight,
+  BrainCircuit
 } from 'lucide-react';
 
 const AISection = () => {
   const [ref, visible] = useReveal();
 
   const capabilities = [
-    { name: 'Smart Reports', icon: BarChart3 },
-    { name: 'Business Insights', icon: TrendingUp },
-    { name: 'Automated Summaries', icon: FileText },
-    { name: 'Document Understanding', icon: ScanSearch },
-    { name: 'Customer Support', icon: Headphones },
-    { name: 'Predictive Analysis', icon: LineChart },
-    { name: 'Workflow Automation', icon: Workflow },
-    { name: 'Internal AI Assistants', icon: Bot },
+    {
+      name: 'Smart Reports',
+      desc: 'Instant financial & sales breakdowns delivered automatically.',
+      icon: BarChart3
+    },
+    {
+      name: 'Business Insights',
+      desc: 'Detect margin leaks, dead stock, and top-performing products.',
+      icon: TrendingUp
+    },
+    {
+      name: 'Automated Summaries',
+      desc: 'Daily 8 PM executive briefing sent straight to the owner’s WhatsApp.',
+      icon: FileText
+    },
+    {
+      name: 'Document Understanding',
+      desc: 'Scan paper invoices and supplier PDFs directly into your ERP ledger.',
+      icon: ScanSearch
+    },
+    {
+      name: 'Customer Support',
+      desc: '24/7 automated order status and invoice delivery on WhatsApp.',
+      icon: Headphones
+    },
+    {
+      name: 'Predictive Analysis',
+      desc: 'Forecast seasonal demand spikes and stock re-order levels accurately.',
+      icon: LineChart
+    },
+    {
+      name: 'Workflow Automation',
+      desc: 'Trigger automatic payment follow-ups when invoices become overdue.',
+      icon: Workflow
+    },
+    {
+      name: 'Internal AI Assistants',
+      desc: 'Ask questions about your business inventory and dues in plain English.',
+      icon: Bot
+    },
   ];
 
   return (
-    <section id="ai" className="py-20 bg-white">
+    <section id="ai" className="py-24 bg-gray-50/50">
       <div 
         ref={ref}
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       >
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+          {/* Left Side Content */}
+          <div className="w-full lg:w-1/2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange/10 text-orange font-bold text-xs uppercase tracking-wider mb-4 border border-orange/20">
+              <BrainCircuit className="w-3.5 h-3.5" />
+              <span>Pragmatic Technology</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight mb-4">
               AI That Solves Real Business Problems
             </h2>
-            <p className="text-lg text-slate mb-6">
+
+            <p className="text-lg sm:text-xl font-bold text-orange mb-6">
               AI should solve a business problem — not just look impressive.
             </p>
-            <p className="text-gray-800 mb-8">
-              We integrate AI into business systems where it creates actual value — from automating reports to understanding documents to predicting patterns.
+
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+              We don't build generic chatbots or gimmicks. We integrate artificial intelligence into your existing daily business systems where it creates measurable ROI — reducing clerical data entry, catching invoice discrepancies, and surfacing actionable insights.
             </p>
+
+            <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate block mb-1">
+                Our Guarantee
+              </span>
+              <p className="text-navy font-semibold text-sm">
+                Every AI feature we implement must save your staff tangible hours or directly prevent financial leakages.
+              </p>
+            </div>
+
             <Link 
               to="/contact" 
-              className="inline-block bg-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-light transition-colors"
+              className="inline-flex items-center gap-2 bg-orange text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-orange-dark shadow-md hover:shadow-lg active:scale-95 transition-all"
             >
-              Talk to us about an AI use case
+              <span>Talk to Us About an AI Use Case</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
-          <div className="lg:w-1/2 w-full">
-            <div className="grid grid-cols-2 gap-3">
+          {/* Right Side 8 Capabilities Grid */}
+          <div className="w-full lg:w-1/2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {capabilities.map((cap, index) => {
                 const Icon = cap.icon;
                 return (
-                  <div key={index} className="bg-gray-50 rounded-xl p-4 flex flex-col">
-                    <Icon className="w-8 h-8 text-orange mb-2" />
-                    <span className="text-sm font-semibold text-navy">
-                      {cap.name}
-                    </span>
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-2xl p-5 border border-gray-200 hover:border-orange hover:shadow-md transition-all duration-200 group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-orange/10 text-orange flex items-center justify-center mb-3 group-hover:bg-orange group-hover:text-white transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-base font-bold text-navy mb-1 group-hover:text-orange transition-colors">
+                        {cap.name}
+                      </h3>
+                      <p className="text-slate text-xs leading-relaxed">
+                        {cap.desc}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
