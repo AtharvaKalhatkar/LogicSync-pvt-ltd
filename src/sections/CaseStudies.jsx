@@ -1,4 +1,4 @@
-import { Droplets, Smartphone, Home, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Droplets, Smartphone, Home, ArrowRight, CheckCircle2, Store } from 'lucide-react';
 import { useReveal } from '../lib/hooks';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ export default function CaseStudies() {
   const [card1Ref, card1Visible] = useReveal();
   const [card2Ref, card2Visible] = useReveal();
   const [card3Ref, card3Visible] = useReveal();
+  const [card4Ref, card4Visible] = useReveal();
 
   return (
     <section id="projects" className="py-24 bg-white">
@@ -30,8 +31,8 @@ export default function CaseStudies() {
           </p>
         </div>
 
-        {/* 3 Case Study Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* 4 Case Study Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Case Study 1: Bhairavnath Cool Aqua */}
           <div 
@@ -89,12 +90,69 @@ export default function CaseStudies() {
             </div>
           </div>
 
-          {/* Case Study 2: Pune Bhim Shakti Sangathan */}
+          {/* Case Study 2: Dukan Setu */}
           <div 
             ref={card2Ref} 
             style={{ transitionDelay: '100ms' }}
             className={`bg-gray-50/70 rounded-3xl border border-gray-200 p-8 flex flex-col justify-between hover:bg-white hover:border-orange/60 hover:shadow-xl transition-all duration-500 ${
               card2Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-orange/10 text-orange flex items-center justify-center">
+                  <Store className="w-7 h-7" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-orange bg-orange/10 px-3 py-1 rounded-full border border-orange/20">
+                  Retail & Khata Automation
+                </span>
+              </div>
+
+              <h3 className="text-2xl font-black text-navy mb-4">
+                Dukan Setu
+              </h3>
+
+              <div className="space-y-4 mb-6">
+                <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-2xs">
+                  <span className="text-[11px] uppercase tracking-wider text-red-600 font-bold block mb-1">
+                    Problem
+                  </span>
+                  <p className="text-gray-800 text-sm">
+                    Local retailers struggling with manual handwritten registers, lost customer udhari balances, and slow counter rush billing.
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-2xs">
+                  <span className="text-[11px] uppercase tracking-wider text-orange font-bold block mb-1">
+                    Solution
+                  </span>
+                  <p className="text-gray-800 text-sm">
+                    Fast counter billing system + customer digital khata + automated WhatsApp bills with embedded UPI payment QR.
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-2xs">
+                  <span className="text-[11px] uppercase tracking-wider text-emerald-600 font-bold block mb-1">
+                    Result
+                  </span>
+                  <p className="text-gray-800 text-sm font-medium">
+                    Instant counter checkout, 100% accurate customer balance tracking, and faster credit recovery via automated WhatsApp notices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-gray-200 text-xs font-bold text-slate">
+              Architecture: Counter Billing POS ↔ Digital Khata ↔ WhatsApp Payments
+            </div>
+          </div>
+
+          {/* Case Study 3: Pune Bhim Shakti Sangathan */}
+          <div 
+            ref={card3Ref} 
+            style={{ transitionDelay: '150ms' }}
+            className={`bg-gray-50/70 rounded-3xl border border-gray-200 p-8 flex flex-col justify-between hover:bg-white hover:border-orange/60 hover:shadow-xl transition-all duration-500 ${
+              card3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             <div>
@@ -141,20 +199,20 @@ export default function CaseStudies() {
             </div>
           </div>
 
-          {/* Case Study 3: LogicSync Rent */}
+          {/* Case Study 4: LogicSync Rent */}
           <div 
-            ref={card3Ref} 
+            ref={card4Ref} 
             style={{ transitionDelay: '200ms' }}
             className={`bg-gray-50/70 rounded-3xl border border-gray-200 p-8 flex flex-col justify-between hover:bg-white hover:border-orange/60 hover:shadow-xl transition-all duration-500 ${
-              card3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              card4Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-orange/10 text-orange flex items-center justify-center">
+                <div className="w-14 h-14 rounded-2xl bg-navy/10 text-navy flex items-center justify-center">
                   <Home className="w-7 h-7" />
                 </div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-orange bg-orange/10 px-3 py-1 rounded-full border border-orange/20">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-navy bg-navy/5 px-3 py-1 rounded-full border border-navy/10">
                   Property Automation
                 </span>
               </div>

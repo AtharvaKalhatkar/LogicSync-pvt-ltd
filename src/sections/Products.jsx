@@ -69,6 +69,14 @@ const products = [
     accent: '#e11d48',
     badge: 'Construction'
   },
+  {
+    name: 'Dukan Setu',
+    tagline: 'Retail Stores, Kirana & Local Traders',
+    description: 'Fast counter billing, barcode inventory, customer digital khata / udhari tracking, and automatic WhatsApp bills with payment QR.',
+    features: ['Instant Counter Billing & Thermal Print', 'Barcode & Item Stock Control', 'Customer Digital Khata (Udhari)', 'Automatic WhatsApp Bill Dispatch', 'UPI Payment QR on Invoices', 'Daily Cash & Profit Summary'],
+    accent: '#ea580c',
+    badge: 'Retail POS'
+  },
 ];
 
 const ProductCard = ({ product, index }) => {
