@@ -1,198 +1,128 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, RefreshCw, Smartphone, Monitor, LayoutDashboard } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Shield } from 'lucide-react';
+import { useCountUp } from '../lib/hooks';
 
 const Hero = () => {
+  const [ref1, count1] = useCountUp(20, 2000);
+  const [ref2, count2] = useCountUp(250, 2000);
+  const [ref3, count3] = useCountUp(15, 2000);
+
   return (
-    <section className="relative bg-white pt-32 pb-20 lg:pt-36 lg:pb-28 overflow-hidden" id="hero">
-      {/* Subtle background tech glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange/5 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white" id="hero">
+      {/* Background: Animated gradient mesh */}
+      <div className="absolute inset-0 -z-10">
+        {/* Main gradient orbs */}
+        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-orange/8 blur-3xl animate-float" />
+        <div className="absolute bottom-[-15%] left-[-10%] w-[500px] h-[500px] rounded-full bg-navy/5 blur-3xl" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[40%] left-[50%] w-[300px] h-[300px] rounded-full bg-orange/5 blur-2xl" />
+        {/* Grid pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(7,26,51,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(7,26,51,0.3) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-32 w-full">
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* Left Side Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-start text-left z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange/10 border border-orange/20 text-orange font-bold text-xs uppercase tracking-widest mb-6">
-              <span className="w-2 h-2 rounded-full bg-orange animate-ping" />
-              <span>LOGICSYNC DIGITAL</span>
-            </div>
-
-            <h1 className="text-navy text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight mb-4">
-              Your Business Problems. <br />
-              <span className="text-orange">Our Smart Digital Solutions.</span>
-            </h1>
-
-            <div className="flex items-center gap-3 text-sm sm:text-base font-bold text-slate mb-6">
-              <span className="text-navy">Software</span>
-              <span className="text-orange font-black">•</span>
-              <span className="text-navy">Automation</span>
-              <span className="text-orange font-black">•</span>
-              <span className="text-navy">AI Systems</span>
-            </div>
-
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-              From everyday business operations to complex workflows, we design and build digital systems that help businesses save time, reduce manual work and operate smarter.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
-              <Link
-                to="/contact"
-                className="bg-orange text-white px-8 py-4 rounded-xl font-bold text-base text-center hover:bg-orange-dark active:scale-95 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
-              >
-                <span>Book a Free Consultation</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/solutions"
-                className="border-2 border-navy text-navy px-8 py-4 rounded-xl font-bold text-base text-center hover:bg-navy hover:text-white active:scale-95 transition-all"
-              >
-                Explore Our Solutions
-              </Link>
-            </div>
-
-            {/* Value Checkpoints */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-gray-200 w-full">
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
-                <span>Custom Built for Your Exact Workflow</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
-                <span>Replace Excel, WhatsApp & Paper</span>
-              </div>
-            </div>
-
-            {/* Government Verified Badge */}
-            <div className="mt-4 pt-3 border-t border-gray-100 flex flex-wrap items-center gap-2 text-xs font-bold text-slate">
-              <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                <span>Govt. of Maharashtra & MSME Verified</span>
+          {/* Announcement badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/5 border border-navy/10 mb-8 animate-fade-in-up">
+            <span className="flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="font-mono text-slate text-[11px]">UDYAM-MH-26-1144939</span>
-            </div>
+              <span className="text-xs font-bold text-navy uppercase tracking-wider">Govt. of Maharashtra Verified</span>
+            </span>
+            <span className="text-gray-300">|</span>
+            <span className="text-xs font-medium text-slate">UDYAM-MH-26-1144939</span>
           </div>
 
-          {/* Right Side Visual: Connected Multi-System Architecture */}
-          <div className="w-full lg:w-1/2 relative flex items-center justify-center min-h-[420px] sm:min-h-[480px]">
-            {/* Outer container card with subtle border */}
-            <div className="relative w-full max-w-lg bg-gray-50/80 rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xl overflow-hidden">
-              
-              <div className="flex items-center justify-between pb-5 border-b border-gray-200 mb-6">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-navy">
-                    Unified Business Architecture
-                  </span>
-                </div>
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold text-orange bg-white px-3 py-1 rounded-full border border-orange/20 shadow-xs">
-                  <RefreshCw className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '8s' }} />
-                  <span>Real-Time Sync</span>
-                </div>
+          {/* Main headline */}
+          <h1 className="text-navy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            We Build the Systems
+            <br />
+            <span className="relative">
+              <span className="text-orange">That Run Your Business</span>
+              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 400 12" fill="none">
+                <path d="M2 10C60 3 150 2 200 5C250 8 340 3 398 7" stroke="#FF6B00" strokeWidth="3" strokeLinecap="round" opacity="0.3" />
+              </svg>
+            </span>
+          </h1>
+
+          {/* Sub-headline */}
+          <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up font-medium" style={{ animationDelay: '0.2s' }}>
+            Custom software, mobile apps & automation — designed around
+            <span className="text-navy font-bold"> your exact workflow</span>. No templates. No compromises.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-14 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <Link
+              to="/contact"
+              className="group bg-navy text-white px-8 py-4 rounded-2xl font-bold text-base sm:text-lg hover:bg-navy-light active:scale-[0.98] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3"
+            >
+              <span>Start Your Project</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/products"
+              className="group border-2 border-gray-200 text-navy px-8 py-4 rounded-2xl font-bold text-base sm:text-lg hover:border-navy hover:bg-navy/5 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
+              <span>View Our Products</span>
+            </Link>
+          </div>
+
+          {/* Feature pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            {[
+              { icon: Zap, text: 'Replace Excel & WhatsApp' },
+              { icon: Shield, text: 'Custom Built for You' },
+              { icon: Sparkles, text: 'AI-Powered Automation' },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-sm font-semibold text-gray-700 hover:border-orange/40 hover:shadow-md transition-all"
+              >
+                <item.icon className="w-4 h-4 text-orange" />
+                <span>{item.text}</span>
               </div>
+            ))}
+          </div>
 
-              {/* Stacked Device Representations */}
-              <div className="space-y-4">
-                
-                {/* 1. Desktop ERP Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-sm hover:border-orange/40 transition-colors">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-navy/10 text-navy flex items-center justify-center">
-                        <Monitor className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-navy leading-tight">Desktop Software / ERP</h4>
-                        <p className="text-[11px] text-slate">Office & Admin Terminal</p>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-bold bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded-full">
-                      GST • Stock • Dues
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                    <div className="bg-gray-50 p-2 rounded-lg">
-                      <span className="text-[10px] text-slate block uppercase">Today's Sales</span>
-                      <strong className="text-navy font-bold">₹84,500</strong>
-                    </div>
-                    <div className="bg-gray-50 p-2 rounded-lg">
-                      <span className="text-[10px] text-slate block uppercase">Invoices</span>
-                      <strong className="text-navy font-bold">28 Paid</strong>
-                    </div>
-                    <div className="bg-orange/10 p-2 rounded-lg">
-                      <span className="text-[10px] text-orange block uppercase font-bold">Udhari Due</span>
-                      <strong className="text-orange font-bold">Auto-Notified</strong>
-                    </div>
-                  </div>
+          {/* Stats bar */}
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <div className="inline-flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:gap-16 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-lg px-8 sm:px-12 py-6">
+              <div className="text-center" ref={ref1}>
+                <div className="text-3xl sm:text-4xl font-black text-navy">
+                  {count1}<span className="text-orange">+</span>
                 </div>
-
-                {/* Connecting Node */}
-                <div className="flex justify-center -my-2 relative z-10">
-                  <div className="w-7 h-7 rounded-full bg-navy text-orange border-2 border-white shadow flex items-center justify-center">
-                    <RefreshCw className="w-3.5 h-3.5" />
-                  </div>
-                </div>
-
-                {/* 2. Mobile App Card */}
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-sm hover:border-orange/40 transition-colors">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-orange/10 text-orange flex items-center justify-center">
-                        <Smartphone className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-navy leading-tight">Mobile Application</h4>
-                        <p className="text-[11px] text-slate">Field Staff, Delivery & Customers</p>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-bold bg-green-50 text-green-700 px-2.5 py-0.5 rounded-full border border-green-200">
-                      Live Delivery GPS
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-xs bg-gray-50 p-2.5 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-500" />
-                      <span className="text-gray-700 font-medium">Auto-generated WhatsApp Bill</span>
-                    </div>
-                    <span className="font-bold text-navy">Sent instantly</span>
-                  </div>
-                </div>
-
-                {/* Connecting Node */}
-                <div className="flex justify-center -my-2 relative z-10">
-                  <div className="w-7 h-7 rounded-full bg-navy text-orange border-2 border-white shadow flex items-center justify-center">
-                    <RefreshCw className="w-3.5 h-3.5" />
-                  </div>
-                </div>
-
-                {/* 3. Web Dashboard Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-sm hover:border-orange/40 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-navy/10 text-navy flex items-center justify-center">
-                        <LayoutDashboard className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-navy leading-tight">Cloud Web Dashboard</h4>
-                        <p className="text-[11px] text-slate">Owner's 24/7 Live Analytics</p>
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold text-orange">
-                      Zero Manual Entry
-                    </span>
-                  </div>
-                </div>
-
+                <div className="text-xs sm:text-sm font-semibold text-slate mt-1 uppercase tracking-wider">Projects Delivered</div>
               </div>
-
-              {/* Bottom tag */}
-              <div className="mt-5 text-center text-xs font-semibold text-slate">
-                One Business • Multiple Digital Systems • Seamless Operations
+              <div className="hidden sm:block w-px h-12 bg-gray-200" />
+              <div className="text-center" ref={ref3}>
+                <div className="text-3xl sm:text-4xl font-black text-navy">
+                  {count3}<span className="text-orange">+</span>
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate mt-1 uppercase tracking-wider">Clients Served</div>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-200" />
+              <div className="text-center" ref={ref2}>
+                <div className="text-3xl sm:text-4xl font-black text-navy">
+                  {count2}<span className="text-orange">+</span>
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate mt-1 uppercase tracking-wider">Paid Users / Month</div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 };
