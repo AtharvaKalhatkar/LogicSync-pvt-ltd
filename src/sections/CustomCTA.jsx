@@ -25,11 +25,11 @@ const CustomCTA = () => {
         </h2>
         
         <p className="text-xl sm:text-2xl text-orange font-bold mb-4">
-          That’s completely okay.
+          You know your business. We engineer the systems to run it.
         </p>
         
-        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Tell us how your business currently operates. We will sit down with you and design a digital system specifically engineered around your workflow.
+        <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+          No technical knowledge required. Simply walk us through your daily routine and what slows your team down — we will design, build, and deploy a custom digital system engineered completely around your workflow.
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
@@ -38,7 +38,7 @@ const CustomCTA = () => {
             className="w-full sm:w-auto bg-orange text-white px-9 py-4 rounded-xl font-bold hover:bg-orange-dark text-base sm:text-lg shadow-xl hover:shadow-2xl active:scale-95 transition-all flex items-center justify-center gap-2 group"
           >
             <MessageSquare className="w-5 h-5" />
-            <span>Discuss Your Business</span>
+            <span>Discuss Your Workflow</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a 
