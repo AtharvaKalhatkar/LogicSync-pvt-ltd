@@ -2,9 +2,9 @@ import { useCountUp } from '../lib/hooks';
 import { CheckCircle, Clock, Users } from 'lucide-react';
 
 const TrustBar = () => {
-  const [ref1, count1] = useCountUp(10, 1800);
+  const [ref1, count1] = useCountUp(20, 1800);
   const [ref2, count2] = useCountUp(7, 1800);
-  const [ref3, count3] = useCountUp(11, 1800);
+  const [ref3, count3] = useCountUp(15, 1800);
 
   return (
     <section className="bg-gray-50/90 border-y border-gray-200 py-10" id="milestones">
