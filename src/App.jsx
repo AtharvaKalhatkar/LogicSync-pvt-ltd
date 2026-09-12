@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppWidget from './components/WhatsAppWidget';
+import AIChatBot from './components/AIChatBot';
 import Home from './pages/Home';
 import SolutionsPage from './pages/SolutionsPage';
 import ProductsPage from './pages/ProductsPage';
@@ -39,7 +39,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-        <WhatsAppWidget />
+        <AIChatBot />
       </div>
     </Router>
   );
