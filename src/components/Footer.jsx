@@ -170,13 +170,22 @@ const Footer = () => {
         </div>
 
         {/* Bottom Strip */}
-        <div className="border-t border-white/10 mt-14 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
-          <div>
-            © 2026 LogicSync Digital. All rights reserved.
+        <div className="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+            <span>© 2026 LogicSync Digital. All rights reserved.</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="text-emerald-400 font-medium">Govt. of Maharashtra & MSME Verified (UDYAM-MH-26-1144939)</span>
           </div>
           
-          <div className="flex items-center gap-6">
-            <span>Pune, Maharashtra, India</span>
+          <div className="flex items-center gap-5">
+            <a 
+              href="./documents/LogicSync_Digital_Udyam_Registration_Certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-orange transition-colors"
+            >
+              Udyam Certificate (PDF)
+            </a>
             <button 
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-white/60 hover:text-orange transition-colors cursor-pointer"

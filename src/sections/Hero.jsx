@@ -61,6 +61,15 @@ const Hero = () => {
                 <span>Replace Excel, WhatsApp & Paper</span>
               </div>
             </div>
+
+            {/* Government Verified Badge */}
+            <div className="mt-4 pt-3 border-t border-gray-100 flex flex-wrap items-center gap-2 text-xs font-bold text-slate">
+              <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                <span>Govt. of Maharashtra & MSME Verified</span>
+              </span>
+              <span className="font-mono text-slate text-[11px]">UDYAM-MH-26-1144939</span>
+            </div>
           </div>
 
           {/* Right Side Visual: Connected Multi-System Architecture */}
