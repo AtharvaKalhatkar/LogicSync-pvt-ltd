@@ -15,7 +15,7 @@ function SolutionsPage() {
             Smart Digital Solutions for Every Business
           </h1>
           <p className="text-slate text-lg mt-4 max-w-3xl mx-auto">
-            From custom software and mobile apps to business automation and AI — we build systems that simplify how your business operates.
+            From custom software and mobile apps to business automation and AI we build systems that simplify how your business operates.
           </p>
         </div>
       </section>

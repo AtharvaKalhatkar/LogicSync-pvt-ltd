@@ -81,11 +81,11 @@ const AISection = () => {
             </h2>
 
             <p className="text-lg sm:text-xl font-bold text-orange mb-6">
-              AI should solve a business problem — not just look impressive.
+              AI should solve a business problem not just look impressive.
             </p>
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
-              We don't build generic chatbots or gimmicks. We integrate artificial intelligence into your existing daily business systems where it creates measurable ROI — reducing clerical data entry, catching invoice discrepancies, and surfacing actionable insights.
+              We don't build generic chatbots or gimmicks. We integrate artificial intelligence into your existing daily business systems where it creates measurable ROI reducing clerical data entry, catching invoice discrepancies, and surfacing actionable insights.
             </p>
 
             <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs mb-8">

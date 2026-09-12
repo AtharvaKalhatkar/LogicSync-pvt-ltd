@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: 'Priya Sharma',
     role: 'Property Manager, Sharma Residency',
-    quote: 'Monthly rent invoices used to take 2 days. Now it\'s automatic — electricity calculated, WhatsApp sent, payment tracked. Game changer.',
+    quote: 'Monthly rent invoices used to take 2 days. Now it\'s automatic electricity calculated, WhatsApp sent, payment tracked. Game changer.',
     rating: 5,
     product: 'LogicSync Rent',
   },

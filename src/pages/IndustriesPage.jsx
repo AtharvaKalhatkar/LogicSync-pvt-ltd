@@ -14,7 +14,7 @@ function IndustriesPage() {
             Built for Real Businesses
           </h1>
           <p className="text-slate text-lg mt-4 max-w-3xl mx-auto">
-            We work with businesses across industries — understanding unique workflows and building systems that fit.
+            We work with businesses across industries understanding unique workflows and building systems that fit.
           </p>
         </div>
       </section>

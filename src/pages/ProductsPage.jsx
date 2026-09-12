@@ -14,7 +14,7 @@ function ProductsPage() {
             Products Built for Real Businesses
           </h1>
           <p className="text-slate text-lg mt-4 max-w-3xl mx-auto">
-            Each product is built around a specific industry workflow — solving real problems that business owners face every day.
+            Each product is built around a specific industry workflow solving real problems that business owners face every day.
           </p>
         </div>
       </section>

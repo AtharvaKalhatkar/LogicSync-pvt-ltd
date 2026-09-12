@@ -28,7 +28,7 @@ const CustomCTA = () => {
             </h2>
             
             <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              No technical knowledge required. Walk us through your daily routine and what slows your team down — we'll design, build, and deploy a system engineered around your workflow.
+              No technical knowledge required. Walk us through your daily routine and what slows your team down we'll design, build, and deploy a system engineered around your workflow.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">

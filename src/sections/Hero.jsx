@@ -55,7 +55,7 @@ const Hero = () => {
 
           {/* Sub-headline */}
           <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up font-medium" style={{ animationDelay: '0.2s' }}>
-            Custom software, mobile apps & automation — designed around
+            Custom software, mobile apps & automation designed around
             <span className="text-navy font-bold"> your exact workflow</span>. No templates. No compromises.
           </p>
 

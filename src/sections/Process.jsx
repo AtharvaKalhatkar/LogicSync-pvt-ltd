@@ -18,7 +18,7 @@ export default function Process() {
       title: "Design",
       icon: PenTool,
       subtitle: "Business Workflow",
-      description: "We map out an optimized, intuitive workflow specifically made for your team — simple enough that anyone can use it without technical training.",
+      description: "We map out an optimized, intuitive workflow specifically made for your team simple enough that anyone can use it without technical training.",
       details: ["Simplified screen flows", "Role-based permissions", "Automated trigger points"]
     },
     {

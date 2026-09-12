@@ -50,7 +50,7 @@ export default function Industries() {
             Built for Real Businesses
           </h2>
           <p className="text-slate text-base sm:text-lg mt-4">
-            We work with businesses across core commercial sectors — understanding unique operational workflows and building systems that fit like a glove.
+            We work with businesses across core commercial sectors understanding unique operational workflows and building systems that fit like a glove.
           </p>
         </div>
 

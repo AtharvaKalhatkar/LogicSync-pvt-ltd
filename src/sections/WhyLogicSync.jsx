@@ -37,7 +37,7 @@ export default function WhyLogicSync() {
       title: "AI Ready",
       icon: Brain,
       tagline: "Practical Intelligence",
-      description: "Integrate intelligent features — like automatic paper bill OCR, voice data entry, and smart forecasting — where they actually drive profit.",
+      description: "Integrate intelligent features like automatic paper bill OCR, voice data entry, and smart forecasting where they actually drive profit.",
       benefit: "Tangible ROI, not speculative tech demos"
     },
     {

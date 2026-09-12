@@ -15,7 +15,7 @@ function ProjectsPage() {
             From Problem → To Working System
           </h1>
           <p className="text-slate text-lg mt-4 max-w-3xl mx-auto">
-            Real businesses. Real workflows. Real solutions — a small milestone, a strong foundation.
+            Real businesses. Real workflows. Real solutions a small milestone, a strong foundation.
           </p>
         </div>
       </section>

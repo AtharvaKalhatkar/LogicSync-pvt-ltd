@@ -10,7 +10,7 @@ export default function WhatWeDo() {
       title: "1. Custom Software",
       icon: Monitor,
       headline: "Built for Your Exact Process",
-      description: "We design and build desktop software, web applications, and internal ERP platforms tailored to your business rules — not off-the-shelf compromises.",
+      description: "We design and build desktop software, web applications, and internal ERP platforms tailored to your business rules not off-the-shelf compromises.",
       examples: ["Custom ERP Platforms", "Inventory & Stock Control", "Desktop Billing Systems", "Internal Operations Dashboards"]
     },
     {
@@ -31,7 +31,7 @@ export default function WhatWeDo() {
       title: "4. AI Solutions",
       icon: Brain,
       headline: "Practical Business Intelligence",
-      description: "Real-world AI integration that delivers tangible ROI — from automated document parsing to voice-assisted data entry and smart inventory predictions.",
+      description: "Real-world AI integration that delivers tangible ROI from automated document parsing to voice-assisted data entry and smart inventory predictions.",
       examples: ["Bill & Receipt OCR", "Automated Business Summaries", "Smart Demand Forecasting", "Internal Knowledge Assistants"]
     },
     {

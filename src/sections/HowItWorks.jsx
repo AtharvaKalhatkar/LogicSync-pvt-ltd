@@ -6,14 +6,14 @@ const steps = [
     icon: MessageSquare,
     number: '01',
     title: 'Tell Us Your Workflow',
-    description: 'Walk us through how your business runs day-to-day. No technical jargon needed — just explain what slows your team down.',
+    description: 'Walk us through how your business runs day-to-day. No technical jargon needed just explain what slows your team down.',
     accent: 'bg-blue-50 text-blue-600',
   },
   {
     icon: Code2,
     number: '02',
     title: 'We Architect & Build',
-    description: 'Our engineers design a custom digital system — desktop ERP, mobile app, or cloud dashboard — tailored precisely to your operations.',
+    description: 'Our engineers design a custom digital system desktop ERP, mobile app, or cloud dashboard tailored precisely to your operations.',
     accent: 'bg-orange/10 text-orange',
   },
   {
@@ -27,7 +27,7 @@ const steps = [
     icon: Headphones,
     number: '04',
     title: 'Ongoing Support',
-    description: 'We don\'t disappear after delivery. Continuous updates, feature additions, and priority support — as your business evolves.',
+    description: 'We don\'t disappear after delivery. Continuous updates, feature additions, and priority support as your business evolves.',
     accent: 'bg-purple-50 text-purple-600',
   },
 ];
